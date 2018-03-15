@@ -283,12 +283,12 @@ void VisualOdometry::optimizeMap()
             iter = map_->map_points_.erase(iter);
             continue;
         }
-        float match_ratio = float(iter->second->matched_times_)/iter->second->visible_times_;
-        if ( match_ratio < map_point_erase_ratio_ )
-        {
-            iter = map_->map_points_.erase(iter);
-            continue;
-        }
+        // float match_ratio = float(iter->second->matched_times_)/iter->second->visible_times_;
+        // if ( match_ratio < map_point_erase_ratio_ )
+        // {
+        //     iter = map_->map_points_.erase(iter);
+        //     continue;
+        // }
         
         double angle = getViewAngle( curr_, iter->second );
         if ( angle > M_PI/6. )
